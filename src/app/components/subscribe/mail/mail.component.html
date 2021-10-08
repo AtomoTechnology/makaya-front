@@ -1,0 +1,22 @@
+<div class="subscribe step-1 validation-email">
+  <div class="btn-login btn">
+    <a href="/login">Log In</a>
+  </div>
+  <div class="subscribe-box p-2">
+    <p class="title step-1-title">Step 1 of 5</p>
+    <form class="subscribe-form">
+      <h3 class="form-title">Enter your email</h3>
+      <fieldset class="w-100">
+        <input type="email" placeholder="example@gmail.com" required />
+      </fieldset>
+      <fieldset class="w-100">
+        <button
+          (click)="emailValidation($event)"
+          class="btn btn-subscribe btn-primary"
+        >
+          Next
+        </button>
+      </fieldset>
+    </form>
+  </div>
+</div>

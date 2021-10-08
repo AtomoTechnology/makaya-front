@@ -1,0 +1,27 @@
+.showcase {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+  img {
+    width: 100%;
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1rem;
+  background: #040714de;
+  .info-right {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    align-items: center;
+  }
+}

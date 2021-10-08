@@ -1,0 +1,49 @@
+<div class="subscribe-payment step-3">
+  <div class="payment-method-container">
+    <div class="payment-method-box">
+      <div class="logo-login d-flex justify-content-center">
+        <img
+          src="../../../assets/images/mSign.png"
+          width="100px"
+          alt="logo Makaya"
+        />
+      </div>
+      <div class="payment-content">
+        <p>Step 3 of 4</p>
+        <div class="payment-content__header">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+          exercitationem, dolore architecto consequatur repellendus recusandae
+          accusantium cupiditate necessitatibus placeat, magni deleniti quasi
+          suscipit vero expedita debitis! Cumque numquam totam odio quos,
+          delectus nam harum nihil aspernatur! Quo ducimus similique iusto
+          voluptas voluptate, neque, repellendus quis vitae totam ipsa porro
+          est.
+        </div>
+        <div class="payment-content__card_info">
+          <form action="" class="form-payment">
+            <fieldset>
+              <label for="card-name">Name Card</label>
+              <input type="text" name="card-name" required />
+            </fieldset>
+            <fieldset>
+              <label for="card-number">Name Number</label>
+              <input type="text" name="card-number" required />
+            </fieldset>
+            <fieldset>
+              <label for="expire-date">Date of Expire</label>
+              <input type="text" required />
+            </fieldset>
+            <fieldset>
+              <label for="security-code">security code</label>
+              <input type="text" required />
+            </fieldset>
+            <button (click)="validateCard($event)" class="btn btn-primary">
+              Next
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

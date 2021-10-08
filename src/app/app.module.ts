@@ -7,6 +7,12 @@ import { HomeComponent } from './components/home/home.component';
 import { AccountComponent } from './components/account/account.component';
 import { BrowserComponent } from './components/browser/browser.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MailComponent } from './components/subscribe/mail/mail.component';
+import { PasswordComponent } from './components/subscribe/password/password.component';
+import { PaymentCardComponent } from './components/subscribe/payment-card/payment-card.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { MediaComponent } from './components/media/media.component';
+import { MediasComponent } from './components/medias/medias.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +20,16 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     AccountComponent,
     BrowserComponent,
-    FooterComponent
+    FooterComponent,
+    MailComponent,
+    PasswordComponent,
+    PaymentCardComponent,
+    MenuComponent,
+    MediaComponent,
+    MediasComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

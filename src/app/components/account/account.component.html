@@ -1,1 +1,43 @@
-<p>account works!</p>
+<div
+  class="login d-flex flex-column justify-content-center align-items-center"
+  id="login"
+>
+  <div class="logo-login d-flex justify-content-center">
+    <img
+      src="../../../assets/images/mSign.png"
+      width="100px"
+      alt="logo Makaya"
+    />
+  </div>
+  <form
+    action=""
+    class="login-form d-flex flex-column gap-4 p-2"
+    id="login-form"
+  >
+    <h3 class="login-title fs-3">Log In with your email</h3>
+    <fieldset>
+      <input
+        type="text"
+        class="form-control email"
+        placeholder="example@gmail.com"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        type="password"
+        class="form-control password"
+        placeholder="********"
+      />
+    </fieldset>
+    <fieldset>
+      <button class="btn btn-primary">Next</button>
+    </fieldset>
+  </form>
+  <div class="subscribe">
+    <span
+      >First time in Makaya
+      <a href="/subscribe" class="text-decoration-underline">Subscribe</a>
+    </span>
+  </div>
+</div>
+<app-footer></app-footer>
