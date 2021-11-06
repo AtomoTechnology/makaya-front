@@ -13,6 +13,7 @@ import { PaymentCardComponent } from './components/subscribe/payment-card/paymen
 import { MenuComponent } from './components/menu/menu.component';
 import { MediaComponent } from './components/media/media.component';
 import { MediasComponent } from './components/medias/medias.component';
+// import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MediasComponent } from './components/medias/medias.component';
     MenuComponent,
     MediaComponent,
     MediasComponent,
+    // CarouselModule,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

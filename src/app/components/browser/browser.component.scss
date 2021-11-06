@@ -1,7 +1,7 @@
 .showcase {
   width: 100%;
   position: relative;
-  z-index: -1;
+  // z-index: -1;
   img {
     width: 100%;
   }
@@ -17,7 +17,8 @@
   position: absolute;
   bottom: 0;
   padding-bottom: 1rem;
-  background: #040714de;
+  // background: #040714de;
+  background: linear-gradient(0, #0070a3 20%, #3483fa00 100%);
   .info-right {
     display: flex;
     justify-content: end;

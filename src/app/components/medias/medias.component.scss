@@ -1,9 +1,39 @@
 .medias {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: column;
   grid-gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
   padding: 10px;
+}
+
+.gender {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  h3 {
+    width: fit-content;
+    a {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+      &:hover {
+        text-decoration: none;
+        .title-hover-details {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .title-hover-details {
+    display: none;
+  }
+
+  .row-container-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.3rem;
+    // background: red;
+    padding: 10px;
+    overflow: auto;
+  }
 }
