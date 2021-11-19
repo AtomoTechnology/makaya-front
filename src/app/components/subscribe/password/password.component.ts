@@ -1,6 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IdentityService } from 'src/app/services/identity.service';
+import { LocalstoragsubscribeService } from 'src/app/services/localstoragsubscribe.service';
 
+declare var $: any;
 @Component({
   selector: 'app-password',
   templateUrl: './password.component.html',
@@ -8,13 +13,60 @@ import { Router } from '@angular/router';
 })
 export class PasswordComponent implements OnInit {
 
-  constructor( private route:Router ) { }
+  passForm = new FormGroup({});
 
-  ngOnInit(): void {
-  }
-  createPassword(e:any){
-    e.preventDefault();
-    this.route.navigate(['payment-method'])
-  }
+  EmailSubscribe: string;
+  IdAccountSubscribe: string;
 
+  constructor( private router:Router, private fb:FormBuilder, 
+    private identityservice: IdentityService, private lgservice: LocalstoragsubscribeService ) { }
+
+    ngOnInit(): void {
+      this.GetDatosSubscribe();
+      this.initForm(); 
+    }
+
+    private GetDatosSubscribe(){
+      let datas = this.lgservice.GetDatosLocalStorageSubscribe();
+      this.EmailSubscribe =  datas.EmailSubscribe;
+      this.IdAccountSubscribe =  datas.IdAccountSubscribe;
+    }
+    private initForm():void{
+      this.passForm = this.fb.group({
+        id:  this.IdAccountSubscribe,
+        email: this.EmailSubscribe,
+        password: ['',[Validators.required,Validators.minLength(6)]]
+      });
+    }
+    
+    isValidField(field: string): string{
+      const validatedField = this.passForm.get(field);
+      let result = (!validatedField.valid && validatedField.touched) ?
+      'is-invalid': validatedField.touched ? 'is-valid':'';
+      return result;
+    }
+  
+    OnSubmit() {
+      if(this.passForm.valid) {
+        this.identityservice.Put(this.passForm.value).subscribe(
+          (result: any) => {
+            this.router.navigate(['subscribe/plan']);        
+          },
+          (err: HttpErrorResponse) => {
+            this.router.navigate(['error']);  
+          }
+        );
+      }
+      else{
+        $('.invalid-feedback').css({
+          'display': 'inline'
+        });
+      }
+    }
+  
+    CleanInput(){
+      $('.invalid-feedback').css({
+        'display': 'none'
+      });
+    }
 }

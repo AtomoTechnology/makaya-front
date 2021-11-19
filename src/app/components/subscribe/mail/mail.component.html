@@ -4,16 +4,25 @@
   </div>
   <div class="subscribe-box p-2">
     <p class="title step-1-title">Step 1 of 5</p>
-    <form class="subscribe-form">
+    <form [formGroup]="mailtForm" class="subscribe-form" (ngSubmit)="OnSubmit()">
       <h3 class="form-title">Enter your email</h3>
       <fieldset class="w-100">
-        <input type="email" placeholder="example@gmail.com" required />
+        <input type="email" (click)="CleanInput()" placeholder="example@gmail.com" required formControlName="email"   [class]="isValidField('email')"/>
+        <div class="invalid-feedback">
+          <span *ngIf="mailtForm.get('email').errors?.required">
+              email required
+          </span>
+          <span *ngIf="mailtForm.get('email').errors?.pattern">
+            invalid email
+          </span>
+          <span *ngIf="mailtForm.get('email').errors?.minlength">          
+            The name cannot be less than 6 characters
+          </span> 
+        </div>
       </fieldset>
+      
       <fieldset class="w-100">
-        <button
-          (click)="emailValidation($event)"
-          class="btn btn-subscribe btn-primary"
-        >
+        <button type="submit" class="btn btn-subscribe btn-primary">
           Next
         </button>
       </fieldset>

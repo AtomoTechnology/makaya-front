@@ -10,20 +10,20 @@
     />
   </div>
   <form
-    action=""
+   [formGroup]="accountForm"
     class="login-form d-flex flex-column gap-4 p-2"
-    id="login-form"
+    id="login-form"   (ngSubmit)="OnSubmit()"
   >
     <h3 class="login-title fs-3">Log In with your email</h3>
     <fieldset>
       <input
         type="text"
         class="form-control email"
-        placeholder="example@gmail.com"
+        placeholder="example@gmail.com" formControlName="email"
       />
     </fieldset>
     <fieldset>
-      <input
+      <input  formControlName="password"
         type="password"
         class="form-control password"
         placeholder="********"
@@ -40,4 +40,4 @@
     </span>
   </div>
 </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

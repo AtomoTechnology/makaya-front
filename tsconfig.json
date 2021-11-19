@@ -14,6 +14,9 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "esModuleInterop": true,  
+    "noImplicitAny": false,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    "strictNullChecks": false,   
     "target": "es2017",
     "module": "es2020",
     "lib": [

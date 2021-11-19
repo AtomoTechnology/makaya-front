@@ -8,6 +8,13 @@ import { IUser } from '../Interfaces/user.interface';
 })
 export class IdentityService {
   constructor(private http: HttpClient) {}
+  
+  Post(data:IUser){
+    return this.http.post(`${environment.urlIdentity}Identity`,data);
+  }
+  
+  Put(data:IUser){
+    return this.http.put(`${environment.urlIdentity}Identity`,data);
+  }
 
-  get() {}
 }
