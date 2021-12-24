@@ -1,5 +1,22 @@
 <div class="planes">
   <div class="planes-container">
+    <div class="plan-item" *ngFor="let item of plan" (click)="getPlan( item )">
+      <div class="item-header">{{ item.typePlan }}</div>
+      <div class="item-desc">
+        {{ item.description }}
+      </div>
+      <div class="item-price">${{ item.price }}</div>
+    </div>
+
+    <!-- <div class="plan-item">
+      <div class="item-header">Header</div>
+      <div class="item-desc">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+        explicabo a voluptatem excepturi amet veritatis.
+      </div>
+      <div class="item-price">$20</div>
+    </div>
+
     <div class="plan-item">
       <div class="item-header">Header</div>
       <div class="item-desc">
@@ -8,6 +25,7 @@
       </div>
       <div class="item-price">$20</div>
     </div>
+
     <div class="plan-item">
       <div class="item-header">Header</div>
       <div class="item-desc">
@@ -15,22 +33,7 @@
         explicabo a voluptatem excepturi amet veritatis.
       </div>
       <div class="item-price">$20</div>
-    </div>
-    <div class="plan-item">
-      <div class="item-header">Header</div>
-      <div class="item-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
-        explicabo a voluptatem excepturi amet veritatis.
-      </div>
-      <div class="item-price">$20</div>
-    </div>
-    <div class="plan-item">
-      <div class="item-header">Header</div>
-      <div class="item-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
-        explicabo a voluptatem excepturi amet veritatis.
-      </div>
-      <div class="item-price">$20</div>
-    </div>
+    </div> -->
+
   </div>
 </div>

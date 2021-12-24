@@ -14,6 +14,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { appRoutes } from './components/routeprincipal/route';
 import { RouterModule } from '@angular/router';
 import { PlanComponent } from './components/plan/plan.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,13 @@ import { PlanComponent } from './components/plan/plan.component';
     MediaComponent,MediasComponent, PlanComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,MaterialModule,
     RouterModule.forRoot(appRoutes, 
       { 
         relativeLinkResolution: 'legacy' ,
         // enableTracing: true,
         // preloadingStrategy: PreloadAllModules
-      }),HttpClientModule
+      }),HttpClientModule, BrowserAnimationsModule
   ],
   providers: [Title, {provide:JWT_OPTIONS, useValue:JWT_OPTIONS},JwtHelperService,
     {

@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IdentityService } from 'src/app/services/identity.service';
 import { LocalstoragsubscribeService } from 'src/app/services/localstoragsubscribe.service';
+import { TaskService } from '../../../services/task.service';
+import { Auth } from '../../../Interfaces/Auth.interface';
 
 declare var $: any;
 @Component({
@@ -18,7 +20,7 @@ export class PasswordComponent implements OnInit {
   EmailSubscribe: string;
   IdAccountSubscribe: string;
 
-  constructor( private router:Router, private fb:FormBuilder, 
+  constructor( private router:Router, private fb:FormBuilder, private taskService: TaskService ,
     private identityservice: IdentityService, private lgservice: LocalstoragsubscribeService ) { }
 
     ngOnInit(): void {
@@ -50,7 +52,10 @@ export class PasswordComponent implements OnInit {
       if(this.passForm.valid) {
         this.identityservice.Put(this.passForm.value).subscribe(
           (result: any) => {
-            this.router.navigate(['subscribe/plan']);        
+           this.taskService.Authentication(this.passForm.value)
+           .subscribe( resp =>{
+              this.router.navigate(['subscribe/plan']); 
+           });       
           },
           (err: HttpErrorResponse) => {
             this.router.navigate(['error']);  

@@ -19,6 +19,7 @@ export class TaskService {
   constructor(private http: HttpClient, private loadscript: LoadscriptService) { }
 
   Authentication(auth:Auth): Observable<boolean>{
+    debugger;
     this.doLogoutUser();
     return this.http.post<any>(`${this.urlBase}Identity/authentication`, auth)
     .pipe(
